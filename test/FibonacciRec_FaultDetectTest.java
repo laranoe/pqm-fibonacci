@@ -22,13 +22,16 @@ class FibonacciRec_FaultDetectTest {
     }
 
     @Test
+        //nothing should happen for string inputs
     void stringValue() {
-
+        FibonacciRec_FaultDetect.main(new String[]{"test"});
+        assertEquals("", outContent.toString());
     }
 
     @Test
     void negativeNumber() {
-
+        FibonacciRec_FaultDetect.main(new String[]{"-1"});
+        assertEquals("", outContent.toString());
     }
 
     @Test
@@ -39,6 +42,7 @@ class FibonacciRec_FaultDetectTest {
 
     @Test
     void outOfRangeInput() {
-
+        FibonacciRec_FaultDetect.main(new String[]{"50"});
+        assertEquals("", outContent.toString());
     }
 }
