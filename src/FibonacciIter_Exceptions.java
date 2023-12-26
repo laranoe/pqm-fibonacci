@@ -4,26 +4,16 @@ import Exceptions.ValueOutOfRangeException;
 
 public class FibonacciIter_Exceptions {
 
-    public static void main(String[] args) {
-        if (args.length > 0){
-            try {
-                if(!args[0].matches("-?(0|[1-9]\\d*)"))
-                    throw new NotANumberException("The input number has to be numerical");
-                int input = Integer.parseInt(args[0]);
-                if (input < 0)
-                    throw new NegativeNumberException("Input cannot be a negative number");
-                if(input > 46)
-                    throw new ValueOutOfRangeException("The input cannot be greater than 46.");
-                FibonacciIter_FaultDetect f = new FibonacciIter_FaultDetect(input);
-            } catch (NegativeNumberException e) {
-                System.out.println("The input value cannot be a negative number!");
-            } catch (ValueOutOfRangeException e) {
-                System.out.println("The input value cannot be greater than 46!");
-            } catch (NotANumberException e) {
-                System.out.println("The input value has to be numerical!");
-            } catch (NumberFormatException nfe){
-                System.out.println("The input has to be an integer value.");
-            }
+    public static void main(String[] args) throws ValueOutOfRangeException, NegativeNumberException, NotANumberException {
+        if (args.length > 0) {
+            if (!args[0].matches("-?(0|[1-9]\\d*)"))
+                throw new NotANumberException("The input number has to be numerical");
+            int input = Integer.parseInt(args[0]);
+            if (input < 0)
+                throw new NegativeNumberException("Input cannot be a negative number");
+            if (input > 46)
+                throw new ValueOutOfRangeException("The input cannot be greater than 46.");
+            FibonacciIter_FaultDetect f = new FibonacciIter_FaultDetect(input);
         }
         else {
             System.out.println("use syntax: java FibonacciIter n");
