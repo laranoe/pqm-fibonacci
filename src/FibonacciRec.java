@@ -11,7 +11,7 @@ public class FibonacciRec {
     public FibonacciRec(int n){
         System.out.println("F("+ n + ") = " + fibonacci(n));
     }
-    private long fibonacci(int n){
+    private int fibonacci(int n){
         //recursive algorithm
         if (n == 0) return 0;
         else if (n == 1) return 1;

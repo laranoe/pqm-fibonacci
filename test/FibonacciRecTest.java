@@ -45,10 +45,10 @@ class FibonacciRecTest {
     @Test
     // an Integer Overflow will create negative return values
     void outOfRangeInput() {
-        FibonacciRec fib = new FibonacciRec(50);
+        FibonacciRec fib = new FibonacciRec(47);
         String output = outContent.toString();
         String [] values = output.split("=");
-        assertTrue(Integer.parseInt(values[1]) < 0);
+        assertTrue(Long.parseLong(values[1].trim()) < 0);
     }
 
 
