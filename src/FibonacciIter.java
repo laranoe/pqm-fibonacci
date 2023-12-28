@@ -1,33 +1,28 @@
+import java.util.ArrayList;
+import java.util.List;
 
 public class FibonacciIter {
+    public static int iterativeFunction(String input) {
+        int n = Integer.parseInt(input);
+
+        List<Integer> sequenceList = new ArrayList<>();
+        sequenceList.add(0);
+        sequenceList.add(1);
+
+        for (int i = 2; i <= n; i++) {
+            sequenceList.add(sequenceList.get(i - 1) + sequenceList.get(i - 2));
+        }
+        return sequenceList.get(sequenceList.size()-1);
+    }
 
     public static void main(String[] args) {
-        if (args.length > 0) {
-            FibonacciIter f = new FibonacciIter(Integer.parseInt(args[0]));
+        if (args.length > 0){
+            int result = iterativeFunction(args[0]);
+            System.out.println("Fib("+args[0]+") = "+ result);
         }
         else {
             System.out.println("use syntax: java FibonacciIter n");
         }
     }
-    public FibonacciIter(int n){
-        System.out.println("F("+ n + ") = " + fibonacci(n));
-    }
-    private int fibonacci(int n){
-        //iterative algorithm
-        if(n == 0) return 0;
-        else if (n == 1) return 1;
-        else {
-            int fibEven = 0;
-            int fibOdd = 1;
-            int result = 1;
-            for (int i = 1; i <= n; i++){
-                result = fibEven + fibOdd;
-                if (i % 2 == 1)
-                    fibOdd = result;
-                else
-                    fibEven = result;
-            }
-            return result;
-        }
-    }
 }
+
