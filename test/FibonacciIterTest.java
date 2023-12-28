@@ -42,6 +42,13 @@ class FibonacciIterTest {
     void iterativeFunction_negativeValue() {
         assertEquals(1, FibonacciIter.iterativeFunction("-1"));
     }
+
+    @Test
+    void iterativeFunction_nonIntegerValue(){
+        Exception exception = assertThrows(NumberFormatException.class, () -> FibonacciIter.iterativeFunction("3000000000"));
+        assertEquals("For input string: \"3000000000\"", exception.getMessage());
+    }
+
     @Test
     void main_StringValue() {
         Exception stringValue = assertThrows(NumberFormatException.class, () -> FibonacciIter.main(new String[] {"test"}));
