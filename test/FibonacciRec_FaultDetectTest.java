@@ -39,10 +39,14 @@ class FibonacciRec_FaultDetectTest {
         FibonacciRec_FaultDetect.main(new String[]{"35"});
         assertEquals("F(35) = 9227465\n", outContent.toString());
     }
-
     @Test
     void main_outOfRangeInput() {
         FibonacciRec_FaultDetect.main(new String[]{"50"});
+        assertEquals("", outContent.toString());
+    }
+    @Test
+    void main_nonIntegerInput(){
+        FibonacciRec_FaultDetect.main(new String[]{"3000000000"});
         assertEquals("", outContent.toString());
     }
 }

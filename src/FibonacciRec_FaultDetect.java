@@ -2,9 +2,13 @@ public class FibonacciRec_FaultDetect {
     public static void main(String[] args) {
         if (args.length > 0){
             if(args[0].matches("-?(0|[1-9]\\d*)")) { //check if input is numerical
-                int input = Integer.parseInt(args[0]);
-                if (input >= 0 && input <= 46) {
-                    FibonacciRec_FaultDetect f = new FibonacciRec_FaultDetect(input);
+                try {
+                    int input = Integer.parseInt(args[0]);
+                    if (input >= 0 && input <= 46) {
+                        FibonacciRec_FaultDetect f = new FibonacciRec_FaultDetect(input);
+                    }
+                } catch (NumberFormatException ignored){
+
                 }
             }
         }

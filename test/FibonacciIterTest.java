@@ -24,7 +24,7 @@ class FibonacciIterTest {
 
     @Test
     void iterativeFunction_StringValue() {
-        Exception exception = assertThrows(NumberFormatException.class, () -> FibonacciRec.main(new String[] {"test"}));
+        Exception exception = assertThrows(NumberFormatException.class, () -> FibonacciIter.iterativeFunction("test"));
         assertEquals("For input string: \"test\"", exception.getMessage());
     }
 

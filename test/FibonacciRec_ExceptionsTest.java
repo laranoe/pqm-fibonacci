@@ -47,4 +47,10 @@ class FibonacciRec_ExceptionsTest {
         Exception stringValue = assertThrows(ValueOutOfRangeException.class, () -> FibonacciRec_Exceptions.main(new String[] {"50"}));
         assertEquals("The input cannot be greater than 46.", stringValue.getMessage());
     }
+
+    @Test
+    void main_nonIntegerInput(){
+        Exception stringValue = assertThrows(ValueOutOfRangeException.class, () -> FibonacciRec_Exceptions.main(new String[] {"3000000000"}));
+        assertEquals("The input must be an Integer value (max. 2147483647).", stringValue.getMessage());
+    }
 }

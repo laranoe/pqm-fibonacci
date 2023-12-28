@@ -1,4 +1,3 @@
-import Exceptions.NegativeNumberException;
 import org.junit.After;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
