@@ -25,25 +25,25 @@ class FibonacciRec_ExceptionsTest {
     }
 
     @Test
-    void stringValue() {
+    void main_stringValue() {
         Exception stringValue = assertThrows(NotANumberException.class, () -> FibonacciRec_Exceptions.main(new String[] {"test"}));
         assertEquals("The input number has to be numerical", stringValue.getMessage());
     }
 
     @Test
-    void negativeNumber() {
+    void main_negativeNumber() {
         Exception stringValue = assertThrows(NegativeNumberException.class, () -> FibonacciRec_Exceptions.main(new String[] {"-1"}));
         assertEquals("Input cannot be a negative number", stringValue.getMessage());
     }
 
     @Test
-    void validInput(){
-        FibonacciRec_Exceptions fib = new FibonacciRec_Exceptions(35);
+    void main_validInput() throws NegativeNumberException, NotANumberException, ValueOutOfRangeException {
+        FibonacciRec_Exceptions.main(new String[]{"35"});
         assertEquals("F(35) = 9227465\n", outContent.toString());
     }
 
     @Test
-    void outOfRangeInput() {
+    void main_outOfRangeInput() {
         Exception stringValue = assertThrows(ValueOutOfRangeException.class, () -> FibonacciRec_Exceptions.main(new String[] {"50"}));
         assertEquals("The input cannot be greater than 46.", stringValue.getMessage());
     }

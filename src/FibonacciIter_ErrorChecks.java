@@ -73,7 +73,7 @@ public class FibonacciIter_ErrorChecks {
 
         if (args.length > 0){
             int result = iterativeFunction(args[0], x);
-            System.out.println("Fib("+args[0]+") = "+ result);
+            System.out.println("F("+args[0]+") = "+ result);
         }
         else {
             System.out.println("use syntax: java FibonacciIter n");

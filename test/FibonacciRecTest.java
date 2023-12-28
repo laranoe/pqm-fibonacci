@@ -38,14 +38,14 @@ class FibonacciRecTest {
 
     @Test
     void validInput(){
-        FibonacciRec fib = new FibonacciRec(35);
+        FibonacciRec.main(new String[]{"35"});
         assertEquals("F(35) = 9227465\n", outContent.toString());
     }
 
     @Test
     // an Integer Overflow will create negative return values
     void outOfRangeInput() {
-        FibonacciRec fib = new FibonacciRec(47);
+        FibonacciRec.main(new String[]{"50"});
         String output = outContent.toString();
         String [] values = output.split("=");
         assertTrue(Long.parseLong(values[1].trim()) < 0);

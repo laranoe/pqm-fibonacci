@@ -23,25 +23,25 @@ class FibonacciRec_FaultDetectTest {
 
     @Test
         //nothing should happen for string inputs
-    void stringValue() {
+    void  main_stringValue() {
         FibonacciRec_FaultDetect.main(new String[]{"test"});
         assertEquals("", outContent.toString());
     }
 
     @Test
-    void negativeNumber() {
+    void main_negativeNumber() {
         FibonacciRec_FaultDetect.main(new String[]{"-1"});
         assertEquals("", outContent.toString());
     }
 
     @Test
-    void validInput(){
-        FibonacciRec_FaultDetect fib = new FibonacciRec_FaultDetect(35);
+    void main_validInput(){
+        FibonacciRec_FaultDetect.main(new String[]{"35"});
         assertEquals("F(35) = 9227465\n", outContent.toString());
     }
 
     @Test
-    void outOfRangeInput() {
+    void main_outOfRangeInput() {
         FibonacciRec_FaultDetect.main(new String[]{"50"});
         assertEquals("", outContent.toString());
     }
